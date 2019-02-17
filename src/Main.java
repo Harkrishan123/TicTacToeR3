@@ -28,9 +28,11 @@ public class Main {
 
                 if (game.validMove(row,col)) {
                     game.insertMark(row, col);
+                    game.nextPlayer();
                 }
 
                 if (game.checkWinner()) {
+                    game.nextPlayer();
                     gameFinished = true;
                     game.printBoard();
                     System.out.println("Player" + game.getCurrentPlayer() + "wins the game!");
@@ -40,7 +42,6 @@ public class Main {
                     game.printBoard();
                     System.out.println("We have a draw!");
                 }
-                game.nextPlayer();
 
             }
             else{
